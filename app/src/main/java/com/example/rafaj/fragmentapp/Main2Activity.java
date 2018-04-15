@@ -19,6 +19,8 @@ public class Main2Activity extends AppCompatActivity {
         textViewTitle = findViewById(R.id.title);
         textViewDescription = findViewById(R.id.description);
 
+        imageViewPlaneta = findViewById(R.id.planetImage);
+
         Intent callingIntent = getIntent();
         Serializable intentAction = callingIntent.getSerializableExtra("Planeta");
 
@@ -27,16 +29,21 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void handleReceivedObject(Intent intent){
-        planeta = intent.getSerializableExtra("Planeta");
-        Planetas planeta1=(Planetas) planeta;
+        planetaSerializable = intent.getSerializableExtra("Planeta");
+        planeta = (Planetas) planetaSerializable;
 
-        textViewTitle.setText(planeta1.getTitulo());
-        textViewDescription.setText(planeta1.getDescripcion());
+        textViewTitle.setText(planeta.getTitulo());
+        textViewDescription.setText(planeta.getDescripcion());
+
+        imageViewPlaneta.setImageResource(planeta.getImageHashMap());
 
     }
 
     TextView textViewTitle;
     TextView textViewDescription;
-    ImageView imageView;
-    Serializable planeta;
+
+    ImageView imageViewPlaneta;
+
+    Planetas planeta;
+    Serializable planetaSerializable;
 }
