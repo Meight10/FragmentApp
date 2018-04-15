@@ -11,20 +11,31 @@
         android:layout_gravity="center"
         android:gravity="center">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/planetImageV"/>
+
+        </RelativeLayout>
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/titleV"
             android:textSize="24sp"
-            android:textColor="#000000"
-            android:text="oli"/>
+            android:textColor="#000000"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/descriptionV"
             android:textSize="18sp"
-            android:textColor="#000000"
-            android:text="ajhiodhwhfiobebwfbwui"/>
+            android:textColor="#000000"/>
     </LinearLayout>
 
 
