@@ -24,16 +24,19 @@ public class FragmentViewer extends Fragment {
 
         textViewTitle = view.findViewById(R.id.titleV);
         textViewDescription = view.findViewById(R.id.descriptionV);
-        Bundle bundle = this.getArguments();
 
+        imageViewPlaneta = view.findViewById(R.id.planetImageV);
+
+        Bundle bundle = this.getArguments();
 
         if(bundle != null){
             planetaSerializable = bundle.getSerializable("Planeta");
             planeta = (Planetas)planetaSerializable;
 
             textViewTitle.setText(planeta.getTitulo());
-
             textViewDescription.setText(planeta.getDescripcion());
+
+            imageViewPlaneta.setImageResource(planeta.getImageHashMap());
 
 
         }
@@ -43,6 +46,8 @@ public class FragmentViewer extends Fragment {
 
     TextView textViewTitle;
     TextView textViewDescription;
+
+    ImageView imageViewPlaneta;
 
     ImageView imageView;
     Serializable planetaSerializable;
