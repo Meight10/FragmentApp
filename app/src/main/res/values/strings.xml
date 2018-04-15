@@ -12,4 +12,17 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
+
+    <string-array name="Descriptions">
+        <item>Lorem ipsum1</item>
+        <item>Lorem ipsum 2</item>
+        <item>Lorem ipsum 3</item>
+        <item>Lorem ipsum 4</item>
+        <item>Lorem ipsum 5</item>
+        <item>Lorem ipsum 6</item>
+        <item>Lorem ipsum 7</item>
+        <item>Lorem ipsum 8</item>
+        <item>Lorem ipsum 9</item>
+    </string-array>
+
 </resources>
