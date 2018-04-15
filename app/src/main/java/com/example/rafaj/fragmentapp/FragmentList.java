@@ -43,19 +43,31 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         //Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
+        planeta = new Planetas();
+
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+
             Intent newIntent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
-            newIntent.setAction(Intent.ACTION_SEND);
-            newIntent.setType("text/plain");
-            newIntent.putExtra(Intent.EXTRA_TEXT, adapterView.getItemAtPosition(i).toString());
+
+            planeta.setIndice(i);
+            planeta.setTitulo(adapterView.getItemAtPosition(i).toString());
+
+            newIntent.putExtra("Planeta", planeta);
             startActivity(newIntent);
+
         }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
             Bundle bundle = new Bundle();
-            bundle.putString("KEY", adapterView.getItemAtPosition(i).toString());
+
+            planeta.setIndice(i);
+            planeta.setTitulo(adapterView.getItemAtPosition(i).toString());
+
+            bundle.putSerializable("Planeta", planeta);
             FragmentViewer frag = new FragmentViewer();
             frag.setArguments(bundle);
+
+            FragmentViewer fragmentViewer = new FragmentViewer();
+            fragmentViewer.setArguments(bundle);
 
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -65,6 +77,7 @@ public class FragmentList extends ListFragment implements AdapterView.OnItemClic
         }
 
 
-
     }
+
+    Planetas planeta;
 }

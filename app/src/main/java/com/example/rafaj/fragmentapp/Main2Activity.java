@@ -3,35 +3,40 @@ package com.example.rafaj.fragmentapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class Main2Activity extends AppCompatActivity {
-    TextView text;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        text = findViewById(R.id.textId);
+        textViewTitle = findViewById(R.id.title);
+        textViewDescription = findViewById(R.id.description);
 
         Intent callingIntent = getIntent();
-        String intentAction = callingIntent.getAction();
-        String intentType = callingIntent.getType();
+        Serializable intentAction = callingIntent.getSerializableExtra("Planeta");
 
-        if (Intent.ACTION_SEND.equals(intentAction) && intentType != null){
-            if (intentType.equals("text/plain")){
-                handleReceivedText(callingIntent);
-            }
-        }
+        if (intentAction instanceof Serializable)
+                handleReceivedObject(callingIntent);
+    }
+
+    private void handleReceivedObject(Intent intent){
+        planeta = intent.getSerializableExtra("Planeta");
+        Planetas planeta1=(Planetas) planeta;
+
+        textViewTitle.setText(planeta1.getTitulo());
+        textViewDescription.setText(planeta1.getDescripcion());
 
     }
 
-    private void handleReceivedText(Intent intent){
-        String intentText = intent.getStringExtra(Intent.EXTRA_TEXT);
-
-        if (text != null){
-            text.setText(intentText);
-        }
-    }
+    TextView textViewTitle;
+    TextView textViewDescription;
+    ImageView imageView;
+    Serializable planeta;
 }

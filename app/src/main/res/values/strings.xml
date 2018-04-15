@@ -13,16 +13,15 @@
         <item>Neptune</item>
     </string-array>
 
-    <string-array name="Descriptions">
-        <item>Lorem ipsum1</item>
-        <item>Lorem ipsum 2</item>
-        <item>Lorem ipsum 3</item>
-        <item>Lorem ipsum 4</item>
-        <item>Lorem ipsum 5</item>
-        <item>Lorem ipsum 6</item>
-        <item>Lorem ipsum 7</item>
-        <item>Lorem ipsum 8</item>
-        <item>Lorem ipsum 9</item>
-    </string-array>
+    <string name = "Sol">Sol es un astro</string>
+    <string name = "Mercurio">Mercurio es un planeta</string>
+    <string name = "Venus">Venus es un planeta de venusianos</string>
+    <string name = "Tierra">Tierra es el maximo planeta del univrso mundial</string>
+    <string name = "Marte">Marte es el planeta rojo donde viven los marcianos :v</string>
+    <string name = "Jupiter">Jupiter es un planeta grandeee</string>
+    <string name = "Saturno">Saturno es el de los anillos :DDD</string>
+    <string name = "Urano">Urano a nadie le importa</string>
+    <string name = "Neptuno">Como Neptuno el dios xD</string>
+
 
 </resources>

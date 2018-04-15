@@ -5,33 +5,48 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.Serializable;
 
 /**
  * Created by rafaj on 8/4/2018.
  */
 
 public class FragmentViewer extends Fragment {
-    TextView text;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.viewer_fragment, container, false);
 
-        text = view.findViewById(R.id.textId);
+        textViewTitle = view.findViewById(R.id.titleV);
+        textViewDescription = view.findViewById(R.id.descriptionV);
         Bundle bundle = this.getArguments();
 
 
         if(bundle != null){
-            Toast.makeText(getActivity(), "Item: " + bundle.getString("KEY"), Toast.LENGTH_SHORT).show();
+            planetaSerializable = bundle.getSerializable("Planet");
+            planeta = (Planetas)planeta;
 
-            text.setText(bundle.getString("KEY"));
+            textViewTitle.setText(planeta.getTitulo());
+
+            textViewDescription.setText(planeta.getDescripcion());
+
 
         }
 
         return view;
     }
+
+    TextView textViewTitle;
+    TextView textViewDescription;
+
+    ImageView imageView;
+    Serializable planetaSerializable;
+    Planetas planeta;
 
 
 }
