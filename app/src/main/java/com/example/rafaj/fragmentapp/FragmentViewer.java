@@ -28,8 +28,8 @@ public class FragmentViewer extends Fragment {
 
 
         if(bundle != null){
-            planetaSerializable = bundle.getSerializable("Planet");
-            planeta = (Planetas)planeta;
+            planetaSerializable = bundle.getSerializable("Planeta");
+            planeta = (Planetas)planetaSerializable;
 
             textViewTitle.setText(planeta.getTitulo());
 
