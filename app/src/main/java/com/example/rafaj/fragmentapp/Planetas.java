@@ -16,20 +16,17 @@ public class Planetas implements Serializable{
 
     public Planetas(){
         imageHashMap = new HashMap<>();
+        setImageHashMap();
     }
 
-    /*private void init(){
 
-        //setArrayID();
-    }*/
-
-
-    public void setTitulo(String name){
-        this.titulo = name;
-    }
 
     public String getTitulo(){
         return titulo;
+    }
+
+    public void setTitulo(String name){
+        this.titulo = name;
     }
 
     public void setIndice(int indice){
@@ -38,12 +35,12 @@ public class Planetas implements Serializable{
 
 
 
-    public int getImageView(){
+    public int getImageHashMap(){
         return imageHashMap.get(indice);
     }
 
 
-    private void setImage(){
+    private void setImageHashMap(){
         imageHashMap.put(0, R.drawable.sol);
         imageHashMap.put(1, R.drawable.mercurio);
         imageHashMap.put(2, R.drawable.venus);
